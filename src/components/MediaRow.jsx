@@ -2,11 +2,13 @@ import PropTypes from 'prop-types';
 
 // src/components/MediaRow.jsx
 const MediaRow = (props) => {
-  const {item} = props;
+  const {item, setSelectedItem} = props;
   return (
     <tr>
       <td>
-        <img src={item.thumbnail} alt={item.title} />
+        <button onClick={() => setSelectedItem(item)}>
+          <img src={item.thumbnail} alt={item.title} />
+        </button>
       </td>
       <td>{item.title}</td>
       <td>{item.description}</td>
@@ -29,6 +31,8 @@ MediaRow.propTypes = {
     description: PropTypes.string.isRequired,
     created_at: PropTypes.string.isRequired,
   }).isRequired,
+  selectedItem: PropTypes.object,
+  setSelectedItem: PropTypes.func.isRequired,
 };
 
 export default MediaRow;
