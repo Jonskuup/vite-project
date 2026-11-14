@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import {Link} from 'react-router';
 
 // src/components/MediaRow.jsx
 const MediaRow = (props) => {
-  const {item, setSelectedItem} = props;
+  const {item} = props;
   return (
     <tr>
       <td>
-        <button onClick={() => setSelectedItem(item)}>
+        <Link to="/single" state={item}>
           <img src={item.thumbnail} alt={item.title} />
-        </button>
+        </Link>
       </td>
       <td>{item.title}</td>
       <td>{item.description}</td>
@@ -31,8 +32,6 @@ MediaRow.propTypes = {
     description: PropTypes.string.isRequired,
     created_at: PropTypes.string.isRequired,
   }).isRequired,
-  selectedItem: PropTypes.object,
-  setSelectedItem: PropTypes.func.isRequired,
 };
 
 export default MediaRow;
