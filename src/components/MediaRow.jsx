@@ -15,6 +15,8 @@ const MediaRow = (props) => {
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
       <td>
+        {item.username}
+        <br />
         <Link to="/single" state={item}>
           Display
         </Link>
@@ -27,6 +29,7 @@ MediaRow.propTypes = {
   item: PropTypes.shape({
     media_id: PropTypes.number.isRequired,
     user_id: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
     filename: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
     filesize: PropTypes.number.isRequired,
