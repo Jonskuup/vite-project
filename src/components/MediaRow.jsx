@@ -2,20 +2,22 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 
 // src/components/MediaRow.jsx
-const MediaRow = (props) => {
-  const {item} = props;
+const MediaRow = ({item}) => {
   return (
     <tr>
       <td>
-        <Link to="/single" state={item}>
-          <img src={item.thumbnail} alt={item.title} />
-        </Link>
+        <img src={item.thumbnail} alt={item.title} />
       </td>
       <td>{item.title}</td>
       <td>{item.description}</td>
       <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
+      <td>
+        <Link to="/single" state={item}>
+          Display
+        </Link>
+      </td>
     </tr>
   );
 };
