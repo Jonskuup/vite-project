@@ -2,7 +2,7 @@
 
 ## Routing published app
 
-Open [Routing react app](https://users.metropolia.fi/~johanph/ohtu-react1/) to view it in the browser.
+Open [Routing react app](https://users.metropolia.fi/~johanph/wsk-routing/) to view it in the browser.
 
 ---
 
