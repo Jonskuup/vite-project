@@ -2,13 +2,15 @@ import MediaRow from '../components/MediaRow';
 import {useEffect, useState} from 'react';
 import {fetchData} from '../utils/fetchData';
 
+const MEDIA_API = import.meta.env.VITE_MEDIA_API + '/media';
+
 const Home = () => {
   const [mediaArray, setMediaArray] = useState([]);
 
   useEffect(() => {
     const getMedia = async () => {
       try {
-        const json = await fetchData('test.json');
+        const json = await fetchData(MEDIA_API);
         setMediaArray(json);
       } catch (error) {
         console.error(error);
@@ -30,6 +32,7 @@ const Home = () => {
             <th>Created</th>
             <th>Size</th>
             <th>Type</th>
+            <th>Info</th>
           </tr>
         </thead>
         <tbody>
