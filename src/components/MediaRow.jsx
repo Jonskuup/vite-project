@@ -1,43 +1,17 @@
-import PropTypes from 'prop-types';
-import {Link} from 'react-router';
-
-// src/components/MediaRow.jsx
-const MediaRow = (props) => {
-  const {item} = props;
+const MediaRow = ({item, setSelectedItem}) => {
   return (
-    <tr>
+    <tr onClick={() => setSelectedItem(item)}>
       <td>
         <img src={item.thumbnail} alt={item.title} />
       </td>
       <td>{item.title}</td>
       <td>{item.description}</td>
+      <td>{item.username}</td>
       <td>{new Date(item.created_at).toLocaleString('fi-FI')}</td>
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
-      <td>
-        {item.username}
-        <br />
-        <Link to="/single" state={item}>
-          Display
-        </Link>
-      </td>
     </tr>
   );
-};
-
-MediaRow.propTypes = {
-  item: PropTypes.shape({
-    media_id: PropTypes.number.isRequired,
-    user_id: PropTypes.number.isRequired,
-    username: PropTypes.string.isRequired,
-    filename: PropTypes.string.isRequired,
-    thumbnail: PropTypes.string.isRequired,
-    filesize: PropTypes.number.isRequired,
-    media_type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    created_at: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default MediaRow;
