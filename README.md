@@ -10,6 +10,8 @@ Open [Custom hooks](https://users.metropolia.fi/~johanph/custom-hooks/) to view 
 
 Open [Forms](https://users.metropolia.fi/~johanph/forms/) to view it in the browser.
 
+Open [Context](https://users.metropolia.fi/~johanph/context/) to view it in the browser.
+
 ---
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
