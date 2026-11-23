@@ -8,7 +8,7 @@ Open [Hooks](https://users.metropolia.fi/~johanph/hooks/) to view it in the brow
 
 Open [Custom hooks](https://users.metropolia.fi/~johanph/custom-hooks/) to view it in the browser.
 
-Open [Forms] (https://users.metropolia.fi/~johanph/forms/) to view it in the browser.
+Open [Forms](https://users.metropolia.fi/~johanph/forms/) to view it in the browser.
 
 ---
 
