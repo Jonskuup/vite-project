@@ -1,14 +1,27 @@
-import useForm from '../../hooks/formHooks';
+import useForm from '../hooks/formHooks';
+import {useAuthentication} from '../hooks/apiHooks';
+import {useNavigate} from 'react-router';
 
 const LoginForm = () => {
+  const postLogin = useAuthentication();
+  const navigate = useNavigate();
   const initValues = {
     username: '',
     password: '',
   };
 
-  const doLogin = () => {
-    console.log(inputs);
-    // TODO: add login functionalities here
+  const doLogin = async (formData) => {
+    console.log('HOOKIN palauttama formdata', formData);
+
+    try {
+      const userInfo = await postLogin(formData);
+      console.log(userInfo);
+
+      localStorage.setItem('token', userInfo.token);
+      navigate('/');
+    } catch (error) {
+      console.log('Error', error);
+    }
   };
 
   const {inputs, handleInputChange, handleSubmit} = useForm(
