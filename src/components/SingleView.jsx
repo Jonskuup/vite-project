@@ -1,7 +1,7 @@
 // SingleView.jsx
 
 const SingleView = (props) => {
-  const {item, setSelectedItem} = props;
+  const {item, setItem} = props;
 
   if (!item) {
     return null;
@@ -21,7 +21,7 @@ const SingleView = (props) => {
 
       <p>{item.description}</p>
 
-      <button onClick={() => setSelectedItem(null)}>Close</button>
+      <button onClick={() => setItem(null)}>Close</button>
     </dialog>
   );
 };
